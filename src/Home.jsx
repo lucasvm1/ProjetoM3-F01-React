@@ -1,7 +1,14 @@
-function Home() {
-    const nome = 'Lucas'
+import "./Home.css";
+import PaletaLista from "PaletaLista";
 
-    return <div className="Home">{nome}</div>
+function Home() {
+  return (
+    <div className="Home">
+      <div className="Home__container">
+        <PaletaLista />
+      </div>
+    </div>
+  );
 }
 
 export default Home;
