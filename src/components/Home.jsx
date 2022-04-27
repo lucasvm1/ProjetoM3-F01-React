@@ -1,5 +1,5 @@
 import "./Home.css";
-import PaletaLista from "PaletaLista";
+import PaletaLista from "./PaletaLista";
 
 function Home() {
   return (
