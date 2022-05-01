@@ -2,12 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Home from "components/Home";
 // import PaletaLista from "components/PaletaLista";
-import './index.css'
+import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-<React.StrictMode>
-  <Home/>
-</React.StrictMode>
+  <React.StrictMode>
+    <Home />
+  </React.StrictMode>
 );
-
