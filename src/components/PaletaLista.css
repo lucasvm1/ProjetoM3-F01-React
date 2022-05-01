@@ -75,16 +75,17 @@
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
-  width: 50%;
+  width: 48%;
 }
 
 .Acoes__remover {
   background-color: red;
+  
+
 }
 
 .Acoes__adicionar {
-  background-color: rgb(104, 53, 187);
-  transition: ease-in-out 0.3s all;
+  background-color: rgb(104, 53, 187); 
 }
 
 .Acoes__adicionar:hover {
