@@ -1,3 +1,4 @@
+import PaletaDetalhesModal from "components/PaletaDetalhesModal/PaletaDetalhesModal";
 import "./PaletaLista.css";
 import { useState, useEffect } from "react";
 import PaletaListaItem from "components/PaletaListaItem/PaletaListaItem";
@@ -6,7 +7,9 @@ import { PaletaService } from "services/PaletaService";
 function PaletaLista() {
   const [paletas, setPaletas] = useState([]);
 
-  const [paletaSelecionada, setPaletaSelecionada] = useState([]);
+  const [paletaSelecionada, setPaletaSelecionada] = useState({});
+
+  const [paletaModal, setPaletaModal] = useState(false);
 
   const adicionarItem = (paletaIndex) => {
     const paleta = {
@@ -27,6 +30,11 @@ function PaletaLista() {
     setPaletas(response);
   };
 
+  const getPaletaById = async (paletaId) => {
+    const response = await PaletaService.getById(paletaId);
+    setPaletaModal(response);
+  };
+
   useEffect(() => {
     getLista();
   }, []);
@@ -39,10 +47,18 @@ function PaletaLista() {
           paleta={paleta}
           quantidadeSelecionada={paletaSelecionada[index]}
           index={index}
-          onRemove={(index) => removerItem(index)}
           onAdd={(index) => adicionarItem(index)}
+          onRemove={(index) => removerItem(index)}
+          clickItem={(paletaId) => getPaletaById(paletaId)}
         />
       ))}
+
+      {paletaModal && (
+        <PaletaDetalhesModal
+          paleta={paletaModal}
+          closeModal={() => setPaletaModal(false)}
+        />
+      )}
     </div>
   );
 }

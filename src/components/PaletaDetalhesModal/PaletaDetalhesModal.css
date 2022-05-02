@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+
+.PaletaDetalhesModal {
+    font-family: "Cabin";
+    background: rgba(104, 53, 187);
+    border-radius: 10px;
+    padding: 15px 0px 15px 15px;
+    max-height: 350px;
+    box-sizing: border-box;
+    width: 315px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    color: #f5f5f5;
+  }
+  
+  .PaletaDetalhesModal > div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  .PaletaDetalhesModal__titulo {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 100%;
+  }
+  
+  .PaletaDetalhesModal__descricao {
+    font-size: 1em;
+  }
+  
+  .PaletaDetalhesModal__preco {
+    color: #f5f5f5;
+    font-weight: bolder;
+    font-size: 2.5em;
+  }
+  
+  .PaletaDetalhesModal__foto {
+    margin-right: -100px;
+    z-index: 0;
+  }
+  
+  @media (max-width: 400px) {
+    .PaletaDetalhesModal {
+      width: 210px;
+      height: 100vh;
+    }
+  
+    .PaletaDetalhesModal__foto {
+      height: 250px;
+      margin-top: 50px;
+      margin-right: -100px;
+    }
+  
+    .PaletaDetalhesModal__preco {
+      font-size: 2em;
+    }
+  
+    .PaletaDetalhesModal__titulo {
+      font-size: 1.5em;
+    }
+  
+    .PaletaDetalhesModal__descricao {
+      font-size: 0.9em;
+    }
+  }

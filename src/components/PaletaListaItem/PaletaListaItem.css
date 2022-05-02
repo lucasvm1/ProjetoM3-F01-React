@@ -10,6 +10,7 @@
   justify-content: space-around;
   border: solid black 2px;
   position: relative;
+  cursor: pointer;
 }
 
 @media (max-width: 400px) {
@@ -98,3 +99,4 @@
   left: -20px;
   font-weight: bolder;
 }
+
