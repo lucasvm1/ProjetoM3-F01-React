@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+
+
+.DeletaPaletaModal {
+    margin-top: -20px;
+  }
+  
+  .DeletaPaletaModal > div {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .DeletaPaletaModal__foto {
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+    width: 80px;
+  }
+  
+  .DeletaPaletaModal__confirmar,
+  .DeletaPaletaModal__cancelar {
+    border: none;
+    border-radius: 5px;
+    font-family: "Cabin", sans-serif;
+    padding: 5px;
+    max-width: 280px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 48%;
+    color: white;
+  }
+  
+  .DeletaPaletaModal__confirmar {
+    background-color: rgb(104, 53, 187);
+  }
+  
+  .DeletaPaletaModal__cancelar {
+    background-color: red;
+  }

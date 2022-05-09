@@ -11,6 +11,7 @@
   border: solid black 2px;
   position: relative;
   cursor: pointer;
+  transition: all 0.5s;
 }
 
 @media (max-width: 400px) {
@@ -20,10 +21,46 @@
   }
 }
 
+.PaletaListaItem--disable {
+  box-shadow: 0px 0px 7px rgb(104, 53, 187);
+}
+
+.PaletaListaItem--disable,
+.PaletaListaItem--disable .PaletaListaItem__preco {
+  color: gray;
+}
+
+.PaletaListaItem--disable .PaletaListaItem__badge {
+  display: none;
+}
+
+.PaletaListaItem--disable img {
+  filter: grayscale(100%);
+}
+
+.PaletaListaItem--disable button:disabled {
+  background-color: gray;
+}
+
+.PaletaListaItem__tag {
+  background-color: rgb(104, 53, 187) !important;
+  color: white !important;
+  position: absolute;
+  font-size: 0.6em;
+  border-radius: 5px;
+  padding: 5px;
+  top: -15px;
+  left: -10px;
+  letter-spacing: 1px;
+}
+
 .PaletaListaItem > div {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  width: 257.5px;
+  height: 150px;
+  width: 100%;
 }
 
 .PaletaListaItem__titulo {
@@ -34,6 +71,7 @@
 
 .PaletaListaItem__descricao {
   font-size: 0.85em;
+  width: 100%;
 }
 
 .PaletaListaItem__preco {
@@ -51,7 +89,7 @@
   border: none;
   color: white;
   border-radius: 5px;
-  font-family: "Exo", sans-serif;
+  font-family: "Cabin", sans-serif;
   padding: 5px;
   max-width: 280px;
   text-align: center;
@@ -100,3 +138,10 @@
   font-weight: bolder;
 }
 
+.PaletaListaItem--deletar {
+  box-shadow: 0px 0px 7px rgba(211, 0, 0);
+}
+
+.PaletaListaItem__tag--deletar {
+  background-color: red !important;
+}
