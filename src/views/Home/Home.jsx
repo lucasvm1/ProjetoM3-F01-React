@@ -9,6 +9,14 @@ import SacolaModal from "components/SacolaModal/SacolaModal";
 import { SacolaService } from "services/SacolaService";
 
 function Home() {
+
+  const [paletaParaEditar, setPaletaParaEditar] = useState();
+  const [paletaParaDeletar, setPaletaParaDeletar] = useState();
+  const [paletaRemovida, setPaletaRemovida] = useState();
+  const [canOpenBag, setCanOpenBag] = useState();
+  const [paletaEditada, setPaletaEditada] = useState();
+
+
   const [canShowAdicionaPaletaModal, setCanShowAdicionaPaletaModal] =
     useState(false);
   const [paletaParaAdicionar, setPaletaParaAdicionar] = useState();
@@ -28,11 +36,6 @@ function Home() {
     setCanOpenBag(true);
   };
 
-  const [paletaParaEditar, setPaletaParaEditar] = useState();
-  const [paletaParaDeletar, setPaletaParaDeletar] = useState();
-
-  const [paletaEditada, setPaletaEditada] = useState();
-
   const handleDeletePaleta = (paletaToDelete) => {
     setPaletaParaDeletar(paletaToDelete);
   };
@@ -49,10 +52,6 @@ function Home() {
     setPaletaParaEditar();
     setModoAtual(ActionMode.NORMAL);
   };
-
-  const [paletaRemovida, setPaletaRemovida] = useState();
-
-  const [canOpenBag, setCanOpenBag] = useState();
 
   return (
     <div className="Home">

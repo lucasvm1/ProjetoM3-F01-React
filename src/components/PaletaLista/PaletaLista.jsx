@@ -78,10 +78,12 @@ function PaletaLista({
     [paletas]
   );
 
-  const filtroPorTitulo = ({target}) => {
-    const lista = [...paletas].filter(({titulo}) => matchByText(titulo, target.value))
+  const filtroPorTitulo = ({ target }) => {
+    const lista = [...paletas].filter(({ titulo }) =>
+      matchByText(titulo, target.value)
+    );
     setPaletasFiltradas(lista);
-  }
+  };
 
   useEffect(() => {
     if (
@@ -90,38 +92,47 @@ function PaletaLista({
     ) {
       adicionaPaletaNaLista(paletaCriada);
     }
-    setPaletasFiltradas(paletas)
+    setPaletasFiltradas(paletas);
   }, [adicionaPaletaNaLista, paletaCriada, paletas]);
 
   useEffect(() => {
     setSelecionadas();
-  }, [ setSelecionadas, paletaSelecionada ]);
+  }, [setSelecionadas, paletaSelecionada]);
+
+  useEffect(() => {
+    getLista();
+  }, [paletaEditada, paletaRemovida]);
 
   return (
     <div className="PaletaLista-Wrapper">
-    <input
-      className="PaletaLista-filtro"
-      onChange={filtroPorTitulo}
-      placeholder="Busque uma paleta pelo título" />
+      <input
+        className="PaletaLista-filtro"
+        onChange={filtroPorTitulo}
+        placeholder="Busque uma paleta pelo título"
+      />
 
-    <div className="PaletaLista">
-      {
-        paletasFiltradas.map((paleta, index) =>
+      <div className="PaletaLista">
+        {paletasFiltradas.map((paleta, index) => (
           <PaletaListaItem
             mode={mode}
             key={`PaletaListaItem-${index}`}
             paleta={paleta}
             quantidadeSelecionada={paletaSelecionada[index]}
             index={index}
-            onAdd={index => adicionarItem(index)}
-            onRemove={index => removerItem(index)}
-            clickItem={(paletaId) => getPaletaById(paletaId)} />
-        )
-      }
+            onAdd={(index) => adicionarItem(index)}
+            onRemove={(index) => removerItem(index)}
+            clickItem={(paletaId) => getPaletaById(paletaId)}
+          />
+        ))}
 
-      {paletaModal && <PaletaDetalhesModal paleta={paletaModal} closeModal={() => setPaletaModal(false)} />}
+        {paletaModal && (
+          <PaletaDetalhesModal
+            paleta={paletaModal}
+            closeModal={() => setPaletaModal(false)}
+          />
+        )}
+      </div>
     </div>
-  </div>
   );
 }
 
